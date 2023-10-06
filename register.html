@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <script src="js/logicRegister.js"></script>
+</head>
+<body>
+    <label>Seleccionar tipo: </label>
+    <button id="clientButton" type="button" value="client">Cliente</button>
+    <button id="restaurantButton" type="button" value="restaurant">Restaurante</button>
+
+    <form id="formRegistrarCliente" action="" method="post" style="display: none;">
+        <div>
+            <div>
+                <label for="name">Nombre: </label>
+                <input id="name" type="text" required>
+            </div>
+            <div>
+                <label>Apellido: </label>
+                <input id="lastName" type="text" required>
+            </div>
+            <div>
+                <label>Email: </label>
+                <input id="email" type="email" required>
+            </div>
+            <div>
+                <label>Contraseña: </label>
+                <input id="password" type="password" required>
+            </div>
+            <div>
+                <label>Repetir Contraseña: </label>
+                <input id="passwordRepeat" type="password" required>
+            </div>
+        </div>
+        <div>
+            <input id="registerClient" type="submit" value="Registrar Cliente">
+        </div>
+    </form>
+    <form id="formRegistrarRestaurante" action="" method="post" style="display: none;">
+        <div>
+            <div>
+                <label for="nameOfTheRestaurant">Nombre: </label>
+                <input id="nameOfTheRestaurant" type="text" required>
+            </div>
+            <div>
+                <label for="duenio">Nombre del dueño: </label>
+                <input id="duenio" type="text" required>
+            </div>
+            <div>
+                <label>Direccion: </label>
+                <input id="address" type="text" required>
+            </div>
+            <div>
+                <label>Cantidad de Mesas: </label>
+                <input id="mesas" type="number" min="0" max="100" required>
+            </div>
+            <div>
+                <label>Email: </label>
+                <input id="emailRestaurant" type="email" required>
+            </div>
+            <div>
+                <label>Contraseña: </label>
+                <input id="passwordRestaurant" type="password" required>
+            </div>
+            <div>
+                <label>Repetir Contraseña: </label>
+                <input id="passwordRestaurantRepeat" type="password" required>
+            </div>
+        </div>
+        <div>
+            <input id="registerRestaurant" type="submit" value="Registrar Restaurante">
+        </div>
+    </form>
+
+</body>
+
+</html>
