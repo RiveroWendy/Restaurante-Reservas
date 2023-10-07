@@ -32,6 +32,7 @@ function validarNombre(nombre)
     }
 }
 
+
 function obtenerApellido()
 {
     let apellido = document.querySelector("#lastname");
