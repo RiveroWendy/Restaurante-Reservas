@@ -11,7 +11,7 @@ function enviarForm(e)
 }
 function obtenerMail(){
     let email = document.querySelector("#email").value;
-    validarFormatoEmail(email);
+   // validarFormatoEmail(email);
     validarEmailPuesto(email);
 }
 
@@ -24,17 +24,17 @@ function validarEmailPuesto(email){
     }
 }
 
-function validarFormatoEmail(email)
-{
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    if(!emailRegex.test(email) && email!=="")
-    {
-        document.querySelector("#message-email").innerHTML="formato de email incorrecto";
-    }
-    else{
-        document.querySelector("#message-email").innerHTML="";
-    }
-}
+// function validarFormatoEmail(email)
+// {
+//     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+//     if(!emailRegex.test(email) && email!=="")
+//     {
+//         document.querySelector("#message-email").innerHTML="formato de email incorrecto";
+//     }
+//     else{
+//         document.querySelector("#message-email").innerHTML="";
+//     }
+// }
 function obtenerPassword()
 {
     let password = document.querySelector("#password").value;
