@@ -7,15 +7,41 @@ function enviarForm(e) {
     e.preventDefault();
     obtenerMail();
     obtenerPassword();
+    obtenerNombre();
+    obtenerApellido();
 }
 
 function obtenerNombre(){
-    let nombre = document.querySelector("#name");
+    let nombre = document.querySelector("#name").value;
+    validarNombre(nombre);
+}
+
+function validarNombre(nombre)
+{
+    const regex = /^[a-zA-Z\s']+$/;
+    if(regex.test(nombre)){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 
 function obtenerApellido()
 {
-    let nombre = document.querySelector("#lastname");
+    let apellido = document.querySelector("#lastname");
+    validarApellido(apellido);
+}
+
+function validarApellido(apellido)
+{
+    const regex = /^[a-zA-Z\s']+$/;
+    if(regex.test(apellido)){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 
 function obtenerMail() {
