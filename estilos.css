@@ -1,0 +1,40 @@
+a {
+    text-align: center;
+    
+}
+
+.nav-link {
+    color: #FF7A00;
+    font-weight: 500;
+}
+
+#btn-salir{
+    color: #FF7A00;
+    font-weight: 500;
+}
+
+body{
+    background-color: #FFEC87;
+    opacity: 0.6;
+    color: #FF7A00;
+}
+
+#titulo-home{
+    color: #FF6B00;
+    font-weight: 600;
+    text-align: center;
+}
+
+.card{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.card-footer{
+    display: grid;
+    justify-content: center;
+}
+
+#img-lugar{
+    border-radius: 100%;
+}
