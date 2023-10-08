@@ -1,6 +1,12 @@
 function inicio() {
-    let formulario = document.querySelector("#formulario-registro");
+    let formulario = document.querySelector("#formRegistrarCliente");
     formulario.addEventListener("submit", enviarForm);
+    let nombre = document.querySelector("#name");
+    nombre.addEventListener("blur", obtenerNombre);
+    let apellido = document.querySelector("#lastName");
+    apellido.addEventListener("blur", obtenerApellido);
+    let password = document.querySelector("#password");
+    password.addEventListener("blur", obtenerPassword);
 }
 
 function enviarForm(e) {
@@ -12,8 +18,9 @@ function enviarForm(e) {
 }
 // Validar Formato del nombre
 function obtenerNombre(){
-    let nombre = document.querySelector("#name").value;
-    if(validarNombre(nombre)){
+    let nombreInput = document.querySelector("#name").value;
+    console.log(nombreInput);
+    if(validarNombre(nombreInput)){
         document.querySelector("#message-name").innerHTML="";
     }
     else{
@@ -24,24 +31,20 @@ function obtenerNombre(){
 function validarNombre(nombre)
 {
     const regex = /^[a-zA-Z\s']+$/;
-    if(regex.test(nombre)){
-        return true;
-    }
-    else{
-        return false;
-    }
+    return regex.test(nombre);
 }
 
 
 function obtenerApellido()
 {
-    let apellido = document.querySelector("#lastname");
-    if(validarApellido(apellido)){
-        document.querySelector("#message-lastname").innerHTML="";
-    }
-    else{
-        document.querySelector("#message-lastname").innerHTML="Formato incorrecto de apellido";
-    }
+    let apellido = document.querySelector("#lastName").value;
+    let messageApellido = document.querySelector("#message-lastname");
+
+    messageApellido.innerHTML=""
+
+    if(!validarApellido(apellido)){
+        messageApellido.innerHTML="Formato incorrecto de apellido";
+    } 
 }
 
 function validarApellido(apellido)
@@ -70,19 +73,15 @@ function validarEmail(email) {
 function obtenerPassword(){
     let password = document.querySelector("#password").value;
     let passwordRepeat = document.querySelector("#passwordRepeat").value;
-    if(validarTamanioPassword(password))
-    {
-        document.querySelector("#message-password").innerHTML="";
-    }
-    else{
-        document.querySelector("#message-password").innerHTML="La contraseña debe ser mayor o igual a 8 caracteres";
-    }
-    if(validarFormatoPassword(password))
-    {
-        document.querySelector("#message-password").innerHTML="";
-    }
-    else{
-        document.querySelector("#message-password").innerHTML="La contraseña debe contener al menos una letra y un numero";
+    let messagePassword =  document.querySelector("#message-password");
+    
+    
+    if (!validarTamanioPassword(password)) {
+        messagePassword.innerHTML = "La contraseña debe ser mayor o igual a 8 caracteres";
+        console.log(messagePassword);
+    } else if (!validarFormatoPassword(password)) {
+        messagePassword.innerHTML = "La contraseña debe contener al menos una letra y un número";
+        console.log(messagePassword);
     }
 }
 function validarTamanioPassword(password){
@@ -94,3 +93,5 @@ function validarFormatoPassword(password){
 
     return regex.test(password);
 }
+
+window.onload = inicio;
