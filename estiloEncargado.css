@@ -1,0 +1,51 @@
+a {
+    text-align: center;
+    
+}
+
+.nav-link {
+    color: #FF7A00;
+    font-weight: 500;
+}
+
+#btn-salir{
+    color: #FF7A00;
+    font-weight: 500;
+}
+
+body{
+    background-color: #FFEC87;
+    opacity: 0.6;
+    color: #FF7A00;
+}
+
+#titulo-home{
+    color: #FF6B00;
+    font-weight: 600;
+    text-align: center;
+}
+
+table{
+    border-collapse: collapse;
+    border: 2px solid #FF6B00;
+    margin: auto;
+}
+
+td, th{
+    border: 1px solid #FF6B00;
+    padding: 10px;
+}
+
+th{
+    background: #FF6B00;
+    color: #FFF;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+td{
+    text-align: center;
+    border-bottom: 2px solid #FF6B00;
+    color:#FF7A00;
+    font-size: 18px;
+}
