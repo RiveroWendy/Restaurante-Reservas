@@ -1,54 +1,44 @@
-function inicio(){
- let formulario = document.querySelector("#formulario-login");
- formulario.addEventListener("submit", enviarForm);
+function inicio() {
+    let formulario = document.querySelector("#formulario-login");
+    formulario.addEventListener("submit", enviarForm);
 }
 
-function enviarForm(e)
-{
-    e.preventDefault();
-    obtenerMail();
-    obtenerPassword();
-}
-function obtenerMail(){
-    let email = document.querySelector("#email").value;
-   // validarFormatoEmail(email);
-    validarEmailPuesto(email);
+function enviarForm(e){
+    e.preventDefault(); 
+    validarCampos();
 }
 
-function validarEmailPuesto(email){
-    if(email ==""){
-        document.querySelector("#message-email").innerHTML="No puede quedar vacio";
+function validarCampos() {
+    let emailInput = document.querySelector("#email").value;
+    let passwordInput = document.querySelector("#password").value;
+    let messageEmail = document.querySelector("#message-email");
+    let messagePassword = document.querySelector("#message-password");
+
+    messageEmail.innerHTML = "";
+    messagePassword.innerHTML = "";
+
+    if (validarCampoVacio(emailInput)) {
+        messageEmail.innerHTML = "No puede quedar vacío";
     }
-    else{
-        document.querySelector("#message-email").innerHTML="";
+
+    if (validarCampoVacio(passwordInput)) {
+        messagePassword.innerHTML = "No puede quedar vacío";
+    }
+
+    if (!validarCampoVacio(emailInput) && !validarCampoVacio(passwordInput)) {
+      
+        pruebaLoginAdmin(emailInput, passwordInput);
     }
 }
 
-// function validarFormatoEmail(email)
-// {
-//     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-//     if(!emailRegex.test(email) && email!=="")
-//     {
-//         document.querySelector("#message-email").innerHTML="formato de email incorrecto";
-//     }
-//     else{
-//         document.querySelector("#message-email").innerHTML="";
-//     }
-// }
-function obtenerPassword()
-{
-    let password = document.querySelector("#password").value;
-    validarPasswordPuesto(password);
+function pruebaLoginAdmin(email, password) {
+    if (email === "admin@gmail.com" && password === "admin1234") {
+        window.location = "admin-home.html";
+    }
 }
-function validarPasswordPuesto(password)
-{
-    if(password ==="")
-    {
-        document.querySelector("#message-password").innerHTML="No puede quedar vacio";
-    }
-    else{
-        document.querySelector("#message-password").innerHTML="";
-    }
+
+function validarCampoVacio(valor) {
+    return valor === "";
 }
 
 window.onload = inicio;
