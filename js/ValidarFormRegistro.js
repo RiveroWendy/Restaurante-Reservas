@@ -9,6 +9,8 @@ function inicio() {
     email.addEventListener("blur", obtenerMail);
     let password = document.querySelector("#password");
     password.addEventListener("blur", obtenerPassword);
+    let passwordrepeat = document.querySelector("#password");
+    passwordrepeat.addEventListener("blur", obtenerPassword);
 }
 
 function enviarForm(e) {
@@ -68,14 +70,20 @@ function obtenerPassword() {
     let password = document.querySelector("#password").value;
     let passwordRepeat = document.querySelector("#passwordRepeat").value;
     let messagePassword = document.querySelector("#message-password");
+    let messageRepeat = document.querySelector("#message-passwordrepeat");
 
+    messagePassword.innerHTML="";
+    messageRepeat.innerHTML="";
 
     if (!validarTamanioPassword(password)) {
         messagePassword.innerHTML = "La contraseña debe ser mayor o igual a 8 caracteres";
-        console.log(messagePassword);
+       
     } else if (!validarFormatoPassword(password)) {
         messagePassword.innerHTML = "La contraseña debe contener al menos una letra y un número";
-        console.log(messagePassword);
+       
+    }
+    else if(!validarPasswordRepetido(password, passwordRepeat)){
+        messageRepeat.innerHTML="Las contraseñas no coinciden";
     }
 }
 function validarTamanioPassword(password) {
@@ -86,6 +94,10 @@ function validarFormatoPassword(password) {
     const regex = /^(?=.*[a-zA-Z])(?=.*\d).+$/;
 
     return regex.test(password);
+}
+
+function validarPasswordRepetido(password, passwordRepeat){
+    return password === passwordRepeat;
 }
 
 window.onload = inicio;
