@@ -91,3 +91,8 @@ td{
     margin: auto;
 
 }
+
+.invalid-feedback-message{
+    color: #e50000;
+    font-weight: bold;
+}
