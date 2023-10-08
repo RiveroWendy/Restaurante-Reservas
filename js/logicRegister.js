@@ -1,6 +1,6 @@
 function mostrarFormularioCliente() {
     var formularioCliente = document.getElementById("formRegistrarCliente");
-    var formularioRestaurante = document.getElementById("formRegistrarRestaurante");
+    var formularioRestaurante = document.getElementById("formRegistrarEncargado");
     
     formularioCliente.style.display = "block";
     formularioRestaurante.style.display = "none";
@@ -8,7 +8,7 @@ function mostrarFormularioCliente() {
 
 function mostrarFormularioRestaurante() {
     var formularioCliente = document.getElementById("formRegistrarCliente");
-    var formularioRestaurante = document.getElementById("formRegistrarRestaurante");
+    var formularioRestaurante = document.getElementById("formRegistrarEncargado");
     
     formularioCliente.style.display = "none";
     formularioRestaurante.style.display = "block";
@@ -17,7 +17,7 @@ function mostrarFormularioRestaurante() {
 
 document.addEventListener("DOMContentLoaded", function() {
     var clientButton = document.getElementById("clientButton");
-    var restaurantButton = document.getElementById("restaurantButton");
+    var restaurantButton = document.getElementById("encargadoButton");
     
     clientButton.addEventListener("click", function(){
         mostrarFormularioCliente();
