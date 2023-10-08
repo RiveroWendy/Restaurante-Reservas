@@ -5,6 +5,8 @@ function inicio() {
     nombre.addEventListener("blur", obtenerNombre);
     let apellido = document.querySelector("#lastName");
     apellido.addEventListener("blur", obtenerApellido);
+    let email = document.querySelector("#email");
+    email.addEventListener("blur", obtenerMail);
     let password = document.querySelector("#password");
     password.addEventListener("blur", obtenerPassword);
 }
@@ -17,52 +19,44 @@ function enviarForm(e) {
     obtenerApellido();
 }
 // Validar Formato del nombre
-function obtenerNombre(){
+function obtenerNombre() {
     let nombreInput = document.querySelector("#name").value;
-    console.log(nombreInput);
-    if(validarNombre(nombreInput)){
-        document.querySelector("#message-name").innerHTML="";
+    let messageNombre = document.querySelector("#message-name");
+
+    messageNombre.innerHTML = "";
+
+    if (!validarNombreApellido(nombreInput)) {
+        document.querySelector("#message-name").innerHTML = "Formato incorrecto de nombre";
     }
-    else{
-        document.querySelector("#message-name").innerHTML="Formato incorrecto de nombre";
-    }
+
 }
 
-function validarNombre(nombre)
-{
-    const regex = /^[a-zA-Z\s']+$/;
-    return regex.test(nombre);
-}
-
-
-function obtenerApellido()
-{
+function obtenerApellido() {
     let apellido = document.querySelector("#lastName").value;
     let messageApellido = document.querySelector("#message-lastname");
 
-    messageApellido.innerHTML=""
+    messageApellido.innerHTML = ""
 
-    if(!validarApellido(apellido)){
-        messageApellido.innerHTML="Formato incorrecto de apellido";
-    } 
+    if (!validarNombreApellido(apellido)) {
+        messageApellido.innerHTML = "Formato incorrecto de apellido";
+    }
 }
 
-function validarApellido(apellido)
-{
+function validarNombreApellido(valor) {
     const regex = /^[a-zA-Z\s']+$/;
-    return regex.test(apellido);
+    return regex.test(valor);
 }
 
 function obtenerMail() {
     let email = document.querySelector("#email").value;
-    if(validarEmail(email))
-    {
-        document.querySelector("#message-email").innerHTML="";
+    let messageEmail = document.querySelector("#message-email");
+
+    messageEmail.innerHTML = ""
+
+    if (!validarEmail(email)) {
+        messageEmail.innerHTML = "Formato de correo incorrecto";
     }
-    else
-    {
-        document.querySelector("#message-email").innerHTML="Formato de correo incorrecto";
-    }
+
 }
 
 function validarEmail(email) {
@@ -70,12 +64,12 @@ function validarEmail(email) {
     return emailRegex.test(email);
 }
 
-function obtenerPassword(){
+function obtenerPassword() {
     let password = document.querySelector("#password").value;
     let passwordRepeat = document.querySelector("#passwordRepeat").value;
-    let messagePassword =  document.querySelector("#message-password");
-    
-    
+    let messagePassword = document.querySelector("#message-password");
+
+
     if (!validarTamanioPassword(password)) {
         messagePassword.innerHTML = "La contraseña debe ser mayor o igual a 8 caracteres";
         console.log(messagePassword);
@@ -84,10 +78,10 @@ function obtenerPassword(){
         console.log(messagePassword);
     }
 }
-function validarTamanioPassword(password){
+function validarTamanioPassword(password) {
     return password.length >= 8;
 }
-function validarFormatoPassword(password){
+function validarFormatoPassword(password) {
     //Al menos 1 letra y 1 numero
     const regex = /^(?=.*[a-zA-Z])(?=.*\d).+$/;
 
