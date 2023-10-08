@@ -27,11 +27,11 @@ function validarCampos() {
 
     if (!validarCampoVacio(emailInput) && !validarCampoVacio(passwordInput)) {
       
-        pruebaLoginAdmin(emailInput, passwordInput);
+        pruebaLogin(emailInput, passwordInput);
     }
 }
 
-function pruebaLoginAdmin(email, password) {
+function pruebaLogin(email, password) {
     if (email === "admin@gmail.com" && password === "admin1234") {
         window.location = "admin-home.html";
     }
