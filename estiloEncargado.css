@@ -8,6 +8,16 @@ a {
     font-weight: 500;
 }
 
+input{
+    border-radius: 15px;
+    border: 0px;
+    padding: 5px;
+}
+
+form{
+    margin: auto;
+}
+
 #btn-salir{
     color: #FF7A00;
     font-weight: 500;
@@ -48,4 +58,59 @@ td{
     border-bottom: 2px solid #FF6B00;
     color:#FF7A00;
     font-size: 18px;
+}
+
+form{
+    justify-content: space-around;
+}
+
+#btnRegistro{
+   margin-left: 60%;
+   background-color: #FF6B00;
+   border-style: none;
+}
+
+.card{
+    margin-left: 30px;
+}
+
+.card-header{
+    text-align: center;
+}
+
+.card-footer{
+    text-align: center;
+}
+
+#btn-sumarMenu{
+   color: #FFF;
+   background-color: #FF6B00;
+   border-style: none;
+   display: block;
+   padding: 0.5rem 1rem;
+   width: 200px;
+   margin: 0 auto;
+}
+
+#btnAgregarMenu{
+    color: #FFF;
+    background-color: #FF6B00;
+    border-style: none;
+}
+
+#agregarReserva{
+    color: #FFF;
+    background-color: #FF6B00;
+    border-style: none;
+}
+
+#agregarPlato{
+    color: #FFF;
+    background-color: #FF6B00;
+    border-style: none;
+}
+
+select{
+    color:#FF6B00;
+    border-color: #FF6B00;
 }
