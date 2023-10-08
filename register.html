@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="js/logicRegister.js"></script>
-    <link href="estilos.css" rel="stylesheet">
+    <link href="estilo.css" rel="stylesheet">
     <script src="js/ValidarFormRegistro.js"></script>
 </head>
 <body>
@@ -23,81 +23,86 @@
         </div>
     </nav>
 
-    <div class="mb-3 mt-3" id="selec-rol">
+    <div class="mb-3 mt-3" id="selec-home">
     <label>Seleccionar tipo: </label>
     <br>
-    <button class="mb-3 mt-3" id="clientButton" type="button" value="client">Cliente</button>
-    <button class="mb-3 mt-3" id="restaurantButton" type="button" value="restaurant">Restaurante</button>
+    <button class="mb-3 mt-3 btn btn-outline-warning" id="clientButton" type="button" value="client">Cliente</button>
+    <br>
+    <button class="mb-3 mt-3 btn btn-outline-warning" id="restaurantButton" type="button" value="restaurant">Restaurante</button>
     </div>
 
+    <div class="row" id="selec-home">
     <form id="formRegistrarCliente" action="" method="post" style="display: none;">
-        <div>
-            <div>
+        <div class="col-6">
+            <div class="mb-3 mt-3">
                 <label for="name">Nombre: </label>
-                <input id="name" type="text" required>
+                <input id="name" type="text" class="form-control" required>
                 <div id="message-name"></div>
             </div>
-            <div>
+            <div class="mb-3 mt-3">
                 <label>Apellido: </label>
-                <input id="lastName" type="text" required>
+                <input class="form-control" id="lastName" type="text" required>
                 <div id="message-lastname"></div>
             </div>
-            <div>
+            <div class="mb-3 mt-3">
                 <label>Email: </label>
-                <input id="email" type="email" required>
+                <input class="form-control" id="email" type="email" required>
                 <div id="message-email"></div>
             </div>
-            <div>
+            <div class="mb-3 mt-3">
                 <label>Contraseña: </label>
-                <input id="password" type="password" required>
+                <input class="form-control" id="password" type="password" required>
                 <div id="message-password"></div>
             </div>
-            <div>
+            <div class="mb-3 mt-3">
                 <label>Repetir Contraseña: </label>
-                <input id="passwordRepeat" type="password" required>
+                <input  class="form-control"  id="passwordRepeat" type="password" required>
                 <div id="message-passwordrepeat"></div>
             </div>
         </div>
         <div>
-            <input id="registerClient" type="submit" value="Registrar Cliente">
+            <input class="mb-3 mt-3" id="registerClient" type="submit" value="Registrar">
         </div>
     </form>
-    <form id="formRegistrarRestaurante" action="" method="post" style="display: none;">
-        <div>
-            <div>
-                <label for="nameOfTheRestaurant">Nombre: </label>
-                <input id="nameOfTheRestaurant" type="text" required>
-            </div>
-            <div>
-                <label for="duenio">Nombre del dueño: </label>
-                <input id="duenio" type="text" required>
-            </div>
-            <div>
-                <label>Direccion: </label>
-                <input id="address" type="text" required>
-            </div>
-            <div>
-                <label>Cantidad de Mesas: </label>
-                <input id="mesas" type="number" min="0" max="100" required>
-            </div>
-            <div>
-                <label>Email: </label>
-                <input id="emailRestaurant" type="email" required>
-            </div>
-            <div>
-                <label>Contraseña: </label>
-                <input id="passwordRestaurant" type="password" required>
-            </div>
-            <div>
-                <label>Repetir Contraseña: </label>
-                <input id="passwordRestaurantRepeat" type="password" required>
-            </div>
-        </div>
-        <div>
-            <input id="registerRestaurant" type="submit" value="Registrar Restaurante">
-        </div>
-    </form>
+   </div>
 
+   <div class="row" id="selec-home">
+    <form id="formRegistrarRestaurante" action="" method="post" style="display: none;">
+        <div class="col-6">
+            <div class="mb-3 mt-3">
+                <label for="nameOfTheRestaurant">Nombre: </label>
+                <input class="form-control" id="nameOfTheRestaurant" type="text" required>
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="duenio">Nombre del dueño: </label>
+                <input class="form-control"id="duenio" type="text" required>
+            </div>
+            <div class="mb-3 mt-3">
+                <label>Direccion: </label>
+                <input class="form-control"id="address" type="text" required>
+            </div>
+            <div class="mb-3 mt-3">
+                <label>Cantidad de Mesas: </label>
+                <input class="form-control" id="mesas" type="number" min="0" max="100" required>
+            </div>
+            <div class="mb-3 mt-3">
+                <label>Email: </label>
+                <input class="form-control"id="emailRestaurant" type="email" required>
+            </div>
+            <div class="mb-3 mt-3">
+                <label>Contraseña: </label>
+                <input class="form-control" id="passwordRestaurant" type="password" required>
+            </div>
+            <div class="mb-3 mt-3">
+                <label>Repetir Contraseña: </label>
+                <input class="form-control" id="passwordRestaurantRepeat" type="password" required>
+            </div>
+        </div>
+        <div>
+            <input class="mb-3 mt-3" id="registerRestaurant" type="submit" value="Registrar">
+        </div>
+    </form>
+  </div>
 </body>
 
 </html>
