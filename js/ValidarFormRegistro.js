@@ -9,7 +9,7 @@ function inicio() {
     email.addEventListener("blur", obtenerMail);
     let password = document.querySelector("#password");
     password.addEventListener("blur", obtenerPassword);
-    let passwordrepeat = document.querySelector("#password");
+    let passwordrepeat = document.querySelector("#passwordRepeat");
     passwordrepeat.addEventListener("blur", obtenerPassword);
 }
 
@@ -27,7 +27,10 @@ function obtenerNombre() {
 
     messageNombre.innerHTML = "";
 
-    if (!validarNombreApellido(nombreInput)) {
+    if(validarCampoVacio(nombreInput)){
+        messageNombre.innerHTML = "No puede quedar vacio";
+    }
+    else if (!validarNombreApellido(nombreInput)) {
         document.querySelector("#message-name").innerHTML = "Formato incorrecto de nombre";
     }
 
@@ -39,7 +42,10 @@ function obtenerApellido() {
 
     messageApellido.innerHTML = ""
 
-    if (!validarNombreApellido(apellido)) {
+    if(validarCampoVacio(apellido)){
+        messageApellido.innerHTML = "No puede quedar vacio";
+    }
+    else if (!validarNombreApellido(apellido)) {
         messageApellido.innerHTML = "Formato incorrecto de apellido";
     }
 }
@@ -55,7 +61,10 @@ function obtenerMail() {
 
     messageEmail.innerHTML = ""
 
-    if (!validarEmail(email)) {
+    if(validarCampoVacio(email)){
+        messageEmail.innerHTML = "No puede quedar vacio";
+    }
+    else if (!validarEmail(email)) {
         messageEmail.innerHTML = "Formato de correo incorrecto";
     }
 
@@ -97,7 +106,11 @@ function validarFormatoPassword(password) {
 }
 
 function validarPasswordRepetido(password, passwordRepeat){
-    return password === passwordRepeat;
+    return password == passwordRepeat;
+}
+
+function validarCampoVacio(valor){
+    return valor =="";
 }
 
 window.onload = inicio;
