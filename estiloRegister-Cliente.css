@@ -67,3 +67,8 @@ td{
     color:#FF7A00;
     font-size: 18px;
 }
+
+.invalid-feedback-message{
+    color: #e50000;
+    font-weight: bold;
+}

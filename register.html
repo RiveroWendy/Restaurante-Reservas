@@ -37,27 +37,27 @@
             <div class="mb-3 mt-3">
                 <label for="name">Nombre: </label>
                 <input id="name" type="text" class="form-control" required>
-                <div id="message-name"></div>
+                <div id="message-name" class="invalid-feedback-message"></div>
             </div>
             <div class="mb-3 mt-3">
                 <label>Apellido: </label>
                 <input class="form-control" id="lastName" type="text" required>
-                <div id="message-lastname"></div>
+                <div id="message-lastname" class="invalid-feedback-message"></div>
             </div>
             <div class="mb-3 mt-3">
                 <label>Email: </label>
                 <input class="form-control" id="email" type="email" required>
-                <div id="message-email"></div>
+                <div id="message-email" class="invalid-feedback-message"></div>
             </div>
             <div class="mb-3 mt-3">
                 <label>Contraseña: </label>
                 <input class="form-control" id="password" type="password" required>
-                <div id="message-password"></div>
+                <div id="message-password" class="invalid-feedback-message"></div>
             </div>
             <div class="mb-3 mt-3">
                 <label>Repetir Contraseña: </label>
                 <input  class="form-control"  id="passwordRepeat" type="password" required>
-                <div id="message-passwordrepeat"></div>
+                <div id="message-passwordrepeat" class="invalid-feedback-message"></div>
             </div>
         </div>
         <div>
@@ -70,32 +70,39 @@
     <form id="formRegistrarEncargado" action="" method="post" style="display: none;">
         <div class="col-6">
             <div class="mb-3 mt-3">
-                <label for="nameOfTheRestaurant">Nombre: </label>
-                <input class="form-control" id="nameOfTheRestaurant" type="text" required>
+                <label for="nameOfTheManager">Nombre: </label>
+                <input class="form-control" id="nameOfTheManager" type="text" required>
+                <div id="message-nameManager" class="invalid-feedback-message"></div>
             </div>
             <div class="mb-3 mt-3">
-                <label for="duenio">Apellido: </label>
-                <input class="form-control"id="duenio" type="text" required>
+                <label for="lastNameManager">Apellido: </label>
+                <input class="form-control" id="lastNameManager" type="text" required>
+                <div id="message-lastNameManager" class="invalid-feedback-message"></div>
             </div>
             <div class="mb-3 mt-3">
                 <label>DNI: </label>
-                <input class="form-control"id="address" type="text" required>
+                <input class="form-control"id="dniManager" type="number" min="100000000" max="999999999" required>
+                <div id="message-dniManager" class="invalid-feedback-message"></div>
             </div>
             <div class="mb-3 mt-3">
                 <label>Telefono de contacto: </label>
-                <input class="form-control" id="mesas" type="number" min="0" max="100" required>
+                <input class="form-control" id="phoneManager" type="tel" required>
+                <div id="message-phoneManager" class="invalid-feedback-message"></div>
             </div>
             <div class="mb-3 mt-3">
                 <label>Email: </label>
-                <input class="form-control"id="emailRestaurant" type="email" required>
+                <input class="form-control" id="emailManager" type="email" required>
+                <div id="message-emailManager" class="invalid-feedback-message"></div>
             </div>
             <div class="mb-3 mt-3">
                 <label>Contraseña: </label>
-                <input class="form-control" id="passwordRestaurant" type="password" required>
+                <input class="form-control" id="passwordManager" type="password" required>
+                <div id="message-passwordManager" class="invalid-feedback-message"></div>
             </div>
             <div class="mb-3 mt-3">
                 <label>Repetir Contraseña: </label>
-                <input class="form-control" id="passwordRestaurantRepeat" type="password" required>
+                <input class="form-control" id="passwordManagerRepeat" type="password" required>
+                <div id="message-passwordManagerRepeat" class="invalid-feedback-message"></div>
             </div>
         </div>
         <div>
