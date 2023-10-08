@@ -28,12 +28,19 @@ body{
 .card{
     margin-left: 5%;
     margin-right: 5%;
+    color: #FF6B00;
+}
+
+.card-body{
+    padding-left: 70px;
+    color:#FF6B00
 }
 
 .card-footer{
     display: grid;
     justify-content: center;
 }
+
 
 #img-lugar{
     border-radius: 100%;
@@ -66,6 +73,23 @@ td{
     border-bottom: 2px solid #FF6B00;
     color:#FF7A00;
     font-size: 18px;
+}
+
+
+
+.btn-primary{
+    background-color: #FF6B00;
+    color: #FFF;
+    border-style: none;
+}
+
+.container{
+    margin: auto;
+}
+
+.tabla{
+    margin: auto;
+
 }
 
 .invalid-feedback-message{
