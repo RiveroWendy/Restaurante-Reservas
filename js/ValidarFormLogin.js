@@ -35,6 +35,12 @@ function pruebaLoginAdmin(email, password) {
     if (email === "admin@gmail.com" && password === "admin1234") {
         window.location = "admin-home.html";
     }
+    else if(email==="manager@gmail.com" && password==="manager1234"){
+        window.location = "encargado-home.html";
+    }
+    else if(email==="cliente@gmail.com" && password==="cliente1234"){
+        window.location = "HomeCliente.html";
+    }
 }
 
 function validarCampoVacio(valor) {
